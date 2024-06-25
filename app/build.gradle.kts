@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kapt)
-//    id("io.realm.kotlin")
     id("io.realm.kotlin") version "2.0.0"
 //    alias(libs.plugins.google.gms.google.services)
 }
@@ -91,10 +90,10 @@ dependencies {
     implementation("com.maxkeppeler.sheets-compose-dialogs:clock:1.0.2")
 
     // Message Bar Compose
-    implementation("com.github.stevdza-san:MessageBarCompose:1.0.5")
+    implementation("com.github.stevdza-san:MessageBarCompose:1.0.8")
 
     // One-Tap Compose
-    implementation("com.github.stevdza-san:OneTapCompose:1.0.0")
+    implementation("com.github.stevdza-san:OneTapCompose:1.0.12")
 
     // Desugar JDK
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
@@ -104,12 +103,16 @@ dependencies {
 //    implementation("com.google.firebase:firebase-storage-ktx:21.0.0")
 
     // Mongo DB Realm
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4") {
-        version {
-            strictly("1.6.0-native-mt")
-        }
-    }
-    implementation("io.realm.kotlin:library-sync:1.0.2")
+//    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4") {
+//        version {
+//            strictly("1.6.0-native-mt")
+//        }
+//    }
+//    implementation("io.realm.kotlin:library-sync:1.0.2")
+
+    // Mongo DB Realm
+    implementation(libs.library.sync)
+    implementation(libs.kotlinx.coroutines.core)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
