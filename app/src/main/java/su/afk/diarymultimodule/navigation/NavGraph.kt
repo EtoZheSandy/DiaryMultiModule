@@ -10,6 +10,7 @@ import androidx.navigation.compose.DialogNavigator
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import su.afk.diarymultimodule.presentation.screens.auth.AuthenticationScreen
 import su.afk.diarymultimodule.util.Constants.WRITE_SCREEN_ARG_KEY
 
 @Composable
@@ -29,7 +30,10 @@ fun SetupNavGraph(
 
 fun NavGraphBuilder.authenticationRoute() {
     composable(route = Screen.Authentication.route) {
-//        AuthenticationScreen()
+        AuthenticationScreen(
+            loadingState = false,
+            onButtonClicked = {}
+        )
     }
 }
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DiaryMultiModule</string>
+    <string name="auth_title">Добро пожаловать</string>
+    <string name="auth_subtitle">Пожалуйста авторизуйтесь</string>
 </resources>
