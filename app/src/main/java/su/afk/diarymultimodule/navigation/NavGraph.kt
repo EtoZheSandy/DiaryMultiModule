@@ -10,6 +10,8 @@ import androidx.navigation.compose.DialogNavigator
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.stevdzasan.messagebar.rememberMessageBarState
+import com.stevdzasan.onetap.rememberOneTapSignInState
 import su.afk.diarymultimodule.presentation.screens.auth.AuthenticationScreen
 import su.afk.diarymultimodule.util.Constants.WRITE_SCREEN_ARG_KEY
 
@@ -30,9 +32,16 @@ fun SetupNavGraph(
 
 fun NavGraphBuilder.authenticationRoute() {
     composable(route = Screen.Authentication.route) {
+        val oneTapState = rememberOneTapSignInState()
+        val messageBarState = rememberMessageBarState()
+
         AuthenticationScreen(
-            loadingState = false,
-            onButtonClicked = {}
+            loadingState = oneTapState.opened,
+            oneTapSignInState = oneTapState,
+            messageBarState = messageBarState,
+            onButtonClicked = {
+                oneTapState.open()
+            }
         )
     }
 }
